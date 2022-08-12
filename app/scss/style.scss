@@ -1,0 +1,104 @@
+@import "../scss/globals";
+@import "../scss/variables";
+@import "../scss/mixins";
+@import "../scss/responsive";
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    background-color: $white;  
+    border-radius: 10px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img {
+
+    &__mobile {
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    &__desktop {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+}
+
+.content {
+    padding: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &__category {
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        margin-bottom: 1em;
+        font-size: 0.875rem;
+    }
+
+    &__product {
+        font-family: 'Fraunces', serif;
+        font-size: 1.75rem;
+        color: $veryDarkBlue;
+        line-height: 1;
+        margin-bottom: 0.7em;
+    }
+
+    &__description {
+        line-height: 1.8;
+        margin-bottom: 1em;
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+        width: 100%;
+
+        &--disc {
+            font-family: 'Fraunces', serif;
+            font-size: 1.75rem;
+            color: $darkCyan;
+            font-weight: map-get($font-weights, bold);
+            margin-right: 1em;
+        }
+
+        &--real {
+            text-decoration: line-through;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: 1em 2em;
+        border: 0;
+        border-radius: 8px;
+        background-color: $darkCyan;
+        color: $white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: map-get($font-weights, bold);
+        cursor: pointer;
+
+        i {
+            font-size: 0.875rem;
+            font-weight: map-get($font-weights, medium);
+            margin-right: 0.5em;
+        }
+
+        &:hover {
+            background-color: hsl(158, 36%, 26%);
+        }
+    }
+}
